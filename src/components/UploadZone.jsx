@@ -62,16 +62,6 @@ export default function UploadZone({ onFilesSubmit, onDemoStart }) {
         )}
 
         <div className="flex flex-col gap-4">
-          <button
-            onClick={onDemoStart}
-            className="w-full py-4 px-8 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white rounded-xl font-bold text-lg transition-all shadow-xl shadow-indigo-500/20 terminal-glow"
-          >
-            🚀 Load Sample Deal Data
-          </button>
-          <p className="text-center text-xs text-slate-500">
-            Instant demo — no API key required
-          </p>
-
           {files.length > 0 && (
             <button
               onClick={() => onFilesSubmit(files)}
