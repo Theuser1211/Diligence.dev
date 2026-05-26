@@ -31,6 +31,11 @@ app.post('/api/analyze-demo', (req, res) => {
   runMockPipeline(sseEmitter).finally(() => res.end());
 });
 
-app.listen(PORT, () => {
-  console.log(`🔬 Diligence.dev server running on port ${PORT}`);
-});
+// Export for Vercel
+export default app;
+
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🔬 Diligence.dev server running on port ${PORT}`);
+  });
+}
